@@ -44,3 +44,9 @@ extension CKRecord {
         self.setValue(message.timeStamp, forKey: Constants.timeStampKey)
     }
 }
+
+extension Message: Equatable {
+    static func == (lhs: Message, rhs: Message) -> Bool {
+        <#code#>
+    }
+}

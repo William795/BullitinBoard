@@ -16,6 +16,7 @@
 		922F7C1E22A5875F000F8FC6 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922F7C1D22A5875F000F8FC6 /* Message.swift */; };
 		922F7C2222A5BADA000F8FC6 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922F7C2122A5BADA000F8FC6 /* MessageController.swift */; };
 		922F7C2522A5C01D000F8FC6 /* messageListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922F7C2422A5C01D000F8FC6 /* messageListTableViewController.swift */; };
+		922F7C2C22A5D1D2000F8FC6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922F7C2B22A5D1D2000F8FC6 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		922F7C1D22A5875F000F8FC6 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		922F7C2122A5BADA000F8FC6 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		922F7C2422A5C01D000F8FC6 /* messageListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageListTableViewController.swift; sourceTree = "<group>"; };
+		922F7C2B22A5D1D2000F8FC6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				922F7C2C22A5D1D2000F8FC6 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,11 +106,12 @@
 		922F7BEA22A58389000F8FC6 /* BullitinBoard */ = {
 			isa = PBXGroup;
 			children = (
+				922F7C1922A586B5000F8FC6 /* BullitinBoard.entitlements */,
 				922F7C2322A5BB0C000F8FC6 /* Resources */,
 				922F7BEF22A58389000F8FC6 /* Main.storyboard */,
-				922F7C1D22A5875F000F8FC6 /* Message.swift */,
-				922F7C2122A5BADA000F8FC6 /* MessageController.swift */,
-				922F7C2422A5C01D000F8FC6 /* messageListTableViewController.swift */,
+				922F7C2822A5C860000F8FC6 /* Model */,
+				922F7C2922A5C86A000F8FC6 /* modelController */,
+				922F7C2A22A5C873000F8FC6 /* ViewController */,
 			);
 			path = BullitinBoard;
 			sourceTree = "<group>";
@@ -133,6 +137,7 @@
 		922F7C1A22A586B8000F8FC6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				922F7C2B22A5D1D2000F8FC6 /* CloudKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,13 +145,36 @@
 		922F7C2322A5BB0C000F8FC6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				922F7C1922A586B5000F8FC6 /* BullitinBoard.entitlements */,
 				922F7BEB22A58389000F8FC6 /* AppDelegate.swift */,
 				922F7BF222A5838E000F8FC6 /* Assets.xcassets */,
 				922F7BF422A5838E000F8FC6 /* LaunchScreen.storyboard */,
 				922F7BF722A5838E000F8FC6 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		922F7C2822A5C860000F8FC6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				922F7C1D22A5875F000F8FC6 /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		922F7C2922A5C86A000F8FC6 /* modelController */ = {
+			isa = PBXGroup;
+			children = (
+				922F7C2122A5BADA000F8FC6 /* MessageController.swift */,
+			);
+			path = modelController;
+			sourceTree = "<group>";
+		};
+		922F7C2A22A5C873000F8FC6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				922F7C2422A5C01D000F8FC6 /* messageListTableViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,7 +497,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = BullitinBoard/Resources/BullitinBoard.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BullitinBoard/BullitinBoard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F93N22S4T4;
 				INFOPLIST_FILE = "$(SRCROOT)/BullitinBoard/Resources/Info.plist";
@@ -488,7 +516,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = BullitinBoard/Resources/BullitinBoard.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BullitinBoard/BullitinBoard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F93N22S4T4;
 				INFOPLIST_FILE = "$(SRCROOT)/BullitinBoard/Resources/Info.plist";

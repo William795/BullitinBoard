@@ -47,6 +47,6 @@ extension CKRecord {
 
 extension Message: Equatable {
     static func == (lhs: Message, rhs: Message) -> Bool {
-        <#code#>
+        return lhs.ckRecordID == rhs.ckRecordID
     }
 }

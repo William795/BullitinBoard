@@ -39,6 +39,9 @@
                                             <state key="normal" title="post">
                                                 <color key="titleColor" red="1" green="0.071695463779999996" blue="0.043502052809999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="postButtonTapped:" destination="S2t-zJ-XDR" eventType="touchUpInside" id="k17-b8-BfS"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -52,7 +55,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="zO4-Am-lMD" detailTextLabel="UBd-4I-mtK" style="IBUITableViewCellStyleValue1" id="JWR-CH-47q">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" textLabel="zO4-Am-lMD" detailTextLabel="UBd-4I-mtK" style="IBUITableViewCellStyleValue1" id="JWR-CH-47q">
                                 <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JWR-CH-47q" id="Xu2-Fa-aGZ">
@@ -82,6 +85,9 @@
                             <outlet property="delegate" destination="S2t-zJ-XDR" id="LWy-Jv-jLG"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="messageText" destination="KYe-vz-rh8" id="0K0-dG-hVb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5X-96-o1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

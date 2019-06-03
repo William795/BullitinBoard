@@ -57,24 +57,24 @@ class MessageController {
             self.messages.append(message)
             completion(true)
         }
-        //Load
-        func fetchMessages(completion: @escaping (Bool) -> ()) {
-            //predicate used to determine how items fetched are organized
-            let predicate = NSPredicate(value: true)
-            let querry = CKQuery(recordType: Constants.recordKey, predicate: predicate)
-            
-            privateDB.perform(querry, inZoneWith: nil) { (records, error) in
-                if let error = error {
-                    print("🚒🚒🚒🚒🚒\(error.localizedDescription) \(error) in function: \(#function)🚒🚒🚒🚒🚒")
-                    completion(false)
-                    return
-                }
-                //Record
-                guard let records = records else {completion(false); return}
-                let messages = records.compactMap({Message(ckRecord: $0)})
-                self.messages = messages
-                completion(true)
+    }
+    //Load
+    func fetchMessages(completion: @escaping (Bool) -> ()) {
+        //predicate used to determine how items fetched are organized
+        let predicate = NSPredicate(value: true)
+        let querry = CKQuery(recordType: Constants.recordKey, predicate: predicate)
+        
+        privateDB.perform(querry, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                print("🚒🚒🚒🚒🚒\(error.localizedDescription) \(error) in function: \(#function)🚒🚒🚒🚒🚒")
+                completion(false)
+                return
             }
+            //Record
+            guard let records = records else {completion(false); return}
+            let messages = records.compactMap({Message(ckRecord: $0)})
+            self.messages = messages
+            completion(true)
         }
     }
 }
